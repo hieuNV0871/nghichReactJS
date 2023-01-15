@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      maxHeight: {
+        'search': 'min((100vh - 96px) - 60px, 734px)',
+      }
+    },
   },
   plugins: [],
 }

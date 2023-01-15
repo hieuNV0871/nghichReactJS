@@ -12,7 +12,6 @@ const publicRoutes = [
     {
         path: config.routes.profile,
         component: Profile,
-        layout: null
     },
     {
         path: config.routes.test,
