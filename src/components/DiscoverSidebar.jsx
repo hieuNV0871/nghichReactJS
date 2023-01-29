@@ -62,7 +62,7 @@ const DiscoverSidebar = (props) => {
       <div className="flex flex-wrap w-full px-2">
       {discoverItems.map((discoverItem, index) => (
         
-          <Button to={config.routes.following} className="block w-fit max-w-full">
+          <Button key={index} to={config.routes.following} className="block w-fit max-w-full">
             <div className="hover:bg-[#16182308] flex w-fit max-w-full h-6 mb-3 py-[3px] px-[10px] border border-[#16182333] rounded-xl mr-2">
             <span>{discoverItem.icon}</span>
             
