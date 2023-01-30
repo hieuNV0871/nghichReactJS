@@ -42,7 +42,7 @@ const Sidebar = props => {
     }
 
     return (
-        <aside className='pl-4 pt-5 w-[356px]'>
+        <aside className='pl-4 pt-5 w-[356px] fixed z-10 bottom-0 top-16 bg-white  overflow-y-hidden hover:overflow-y-scroll'>
             <div className='flex flex-col mb-2'>
                 <MenuItemSidebar title="For You" to={config.routes.home} icon={<HomeIcon className="w-8 h-8"/>}/>
                 <MenuItemSidebar title="Following" to={config.routes.following} icon={<GroupUser className="w-8 h-8"/>}/>

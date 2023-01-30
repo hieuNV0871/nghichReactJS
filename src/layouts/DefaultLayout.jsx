@@ -7,7 +7,7 @@ const DefaultLayout = props => {
     return (
         <div>
             <Header/>
-            <div className='max-w-full w-[1150px] mx-auto flex mt-[60px] '>
+            <div className='max-w-full w-[1150px] mx-auto flex mt-[60px] gap-20'>
                 <Sidebar/>
                 <div className='flex-1'>
                 {props.children}

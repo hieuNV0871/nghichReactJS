@@ -1,11 +1,11 @@
 import * as request from '../utils/request'
 
-export const SuggestedAccount = async ({page , perPage})=> {
+export const getVideos = async ({type , page})=> {
     try {
-        const res = await request.get('users/suggested', {
+        const res = await request.get('videos', {
             params: {
-                page,
-                per_page: perPage
+                type,
+                page
             }
         })
         return res.data
