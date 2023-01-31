@@ -1,16 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Following = props => {
-    return (
-        <div>
-            following
-        </div>
-    );
+const Following = (props) => {
+  return <div>following</div>;
 };
 
-Following.propTypes = {
-    
-};
+Following.propTypes = {};
 
 export default Following;

@@ -44,8 +44,7 @@ const discoverItems = [
   },
   {
     icon: <MusicNoteIcon />,
-    title:
-      "Thằng Hầu (Thái Hoàng Remix) [Short Version] - Dunghoangpham",
+    title: "Thằng Hầu (Thái Hoàng Remix) [Short Version] - Dunghoangpham",
   },
   {
     icon: <MusicNoteIcon />,
@@ -58,25 +57,24 @@ const DiscoverSidebar = (props) => {
       <h2 className="mb-2 px-2 text-sm text-[#161823bf] font-semibold ">
         Discover
       </h2>
-      
+
       <div className="flex flex-wrap w-full px-2">
-      {discoverItems.map((discoverItem, index) => (
-        
-          <Button key={index} to={config.routes.following} className="block w-fit max-w-full">
+        {discoverItems.map((discoverItem, index) => (
+          <Button
+            key={index}
+            to={config.routes.following}
+            className="block w-fit max-w-full"
+          >
             <div className="hover:bg-[#16182308] flex w-fit max-w-full h-6 mb-3 py-[3px] px-[10px] border border-[#16182333] rounded-xl mr-2">
-            <span>{discoverItem.icon}</span>
-            
-            <p className="leading-[16px] text-ellipsis overflow-hidden whitespace-nowrap pl-[6px] font-normal text-sm  text-[#161823bf]">
-            {discoverItem.title}
+              <span>{discoverItem.icon}</span>
 
-            </p>
-
+              <p className="leading-[16px] text-ellipsis overflow-hidden whitespace-nowrap pl-[6px] font-normal text-sm  text-[#161823bf]">
+                {discoverItem.title}
+              </p>
             </div>
           </Button>
-
-      ))}
+        ))}
       </div>
-      
     </div>
   );
 };

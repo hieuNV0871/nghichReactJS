@@ -6,7 +6,10 @@ import { TickIcon } from "./Icon";
 
 const AccountItem = (props) => {
   return (
-    <Link to={`/@${props.data.nickname}`} className="flex items-center py-[6px] px-4 cursor-pointer hover:bg-[#16182308]">
+    <Link
+      to={`/@${props.data.nickname}`}
+      className="flex items-center py-[6px] px-4 cursor-pointer hover:bg-[#16182308]"
+    >
       <img
         src={props.data.avatar}
         alt=""
@@ -15,7 +18,7 @@ const AccountItem = (props) => {
       <div className="flex-1 ml-3">
         <h4 className="flex">
           <span className="">{props.data.full_name}</span>
-          {props.data.tick && (<TickIcon className="w-5 h-5 ml-[6px]"/>)}
+          {props.data.tick && <TickIcon className="w-5 h-5 ml-[6px]" />}
         </h4>
         <span className="text-sm text-[#16182380]">{props.data.nickname}</span>
       </div>

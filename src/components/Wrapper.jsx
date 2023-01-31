@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Wrapper = props => {
-    return (
-        <div className='overflow-auto flex flex-col w-full py-2 rounded-lg bg-white min-h-[100px] max-h-search shadow-2xl'>
-            {props.children}
-        </div>
-    );
+const Wrapper = (props) => {
+  return (
+    <div className="overflow-auto flex flex-col w-full py-2 rounded-lg bg-white min-h-[100px] max-h-search shadow-2xl">
+      {props.children}
+    </div>
+  );
 };
 
 Wrapper.propTypes = {
-    children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
-export default Wrapper
+export default Wrapper;

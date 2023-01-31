@@ -8,7 +8,12 @@ import config from "../../configs";
 import image from "../../assets/images";
 import Search from "../../components/Search";
 import Menu from "../../components/Menu";
-import { InboxIcon, MenuIcon, MessagesIcon, PlusIcon} from "../../components/Icon";
+import {
+  InboxIcon,
+  MenuIcon,
+  MessagesIcon,
+  PlusIcon,
+} from "../../components/Icon";
 
 const MENU_ITEMS = [
   {
@@ -224,25 +229,25 @@ const Header = (props) => {
           {currentUser ? (
             <>
               <button className="hover:bg-[#16182308] flex items-center justify-center min-w-[110px] h-9 px-4 border border-[#1618231f] font-semibold">
-                <PlusIcon className="w-5 h-5 mr-2"/>
+                <PlusIcon className="w-5 h-5 mr-2" />
                 Upload
               </button>
               <Tippy content="Messages" placement="bottom">
                 <button className="ml-4 ">
-                  <MessagesIcon className="w-6 h-6"/>
+                  <MessagesIcon className="w-6 h-6" />
                 </button>
               </Tippy>
 
               <Tippy content="Inbox" placement="bottom">
                 <button className="ml-4 px-[3px] pt-[3px]">
-                  <InboxIcon className="w-6 h-6"/>
+                  <InboxIcon className="w-6 h-6" />
                 </button>
               </Tippy>
             </>
           ) : (
             <>
               <button className="hover:bg-[#16182308] flex items-center justify-center min-w-[110px] h-9 px-4 border border-[#1618231f] font-semibold">
-                <PlusIcon/>
+                <PlusIcon />
                 Upload
               </button>
               <button className=" hover:bg-[#ef2950] flex items-center justify-center min-w-[110px] min-h-[36px] h-9 px-4 ml-4 text-white bg-[#fe2c55] rounded  font-bold">
@@ -259,7 +264,7 @@ const Header = (props) => {
               />
             ) : (
               <div>
-                <MenuIcon className="w-8 h-8 ml-4 px-1 cursor-pointer"/>
+                <MenuIcon className="w-8 h-8 ml-4 px-1 cursor-pointer" />
               </div>
             )}
           </Menu>

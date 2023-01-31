@@ -1,16 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Live = props => {
-    return (
-        <div>
-            live
-        </div>
-    );
+const Live = (props) => {
+  return <div>live</div>;
 };
 
-Live.propTypes = {
-    
-};
+Live.propTypes = {};
 
 export default Live;

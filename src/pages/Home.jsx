@@ -25,10 +25,9 @@ const Home = (props) => {
     return () => clearTimeout(time);
   }, [page]);
 
-  
   return (
     <div className="pt-5 ml-[27rem]">
-      {videos.map((video, index)=>(
+      {videos.map((video, index) => (
         <Video key={index} data={video} />
       ))}
     </div>

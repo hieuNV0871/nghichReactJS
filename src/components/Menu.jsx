@@ -9,6 +9,19 @@ const Menu = (props) => {
 
   const current = history[history.length - 1];
 
+  const handleOnBack = () => {
+    setHistory((prev) => prev.slice(0, prev.length - 1));
+  };
+
+  const handleGoToSubMenu = (isParent, item) => {
+    if (isParent) {
+      setHistory((prev) => [...prev, item.children]);
+    }
+  };
+
+  const handleOnHideSubMenu = () => {
+    setHistory((prev) => prev.slice(0, 1));
+  };
   const renderItems = () => {
     return current.data.map((item, index) => {
       const isParent = !!item.children;
@@ -16,11 +29,7 @@ const Menu = (props) => {
         <MenuItem
           key={index}
           data={item}
-          onClick={() => {
-            if (isParent) {
-              setHistory((prev) => [...prev, item.children]);
-            }
-          }}
+          onClick={() => handleGoToSubMenu(isParent, item)}
         />
       );
     });
@@ -29,19 +38,14 @@ const Menu = (props) => {
     <Tippy
       interactive
       delay={[0, 600]}
-      onHide={() => setHistory((prev) => prev.slice(0, 1))}
+      onHide={handleOnHideSubMenu}
       placement="bottom-end"
       render={(attr) => (
         <div tabIndex={-1} {...attr} className="w-[224px]">
           <Wrapper>
             {history.length > 1 && (
               <div className="flex items-center relative">
-                <button
-                  className="p-3"
-                  onClick={() => {
-                    setHistory((prev) => prev.slice(0, prev.length - 1));
-                  }}
-                >
+                <button className="p-3" onClick={handleOnBack}>
                   <ArrowLeft className="w-6 h-6" />
                 </button>
                 <h4 className="absolute translate-x-1/2 right-1/2 font-semibold">
