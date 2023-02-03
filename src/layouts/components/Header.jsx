@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, createContext } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Tippy from "@tippyjs/react";
@@ -14,6 +15,10 @@ import {
   MessagesIcon,
   PlusIcon,
 } from "../../components/Icon";
+
+import Login from '../components/Auth/Login'
+import Modal from '../components/Auth/Modal'
+import SignUp from '../components/Auth/SignUp'
 
 const MENU_ITEMS = [
   {
@@ -216,10 +221,36 @@ const USER_MENU = [
   },
 ];
 
+export const ModalContext = createContext()
+
+
 const Header = (props) => {
-  const currentUser = true;
+  const currentUser = false;
+  const [showAuthModal, setShowAuthModal] = useState(false)
+  const [modalChildren, setModalChildren] = useState(<Login/>)
+
+  const handleModalChildren = (value) => {
+    setModalChildren(value ?? <Login/>)
+  }
+  const value = {
+    handleModalChildren
+  }
   return (
     <div className="h-[60px] w-full border-b-2 fixed top-0 bg-white z-50">
+      <ModalContext.Provider value={value}>
+      {
+        showAuthModal && (
+          <Modal onClose = {()=>{
+            setModalChildren(<Login/>) 
+            setShowAuthModal(false)}
+            }
+            
+            >
+            {modalChildren}
+          </Modal>
+        )
+      }
+      </ModalContext.Provider>
       <div className="h-full max-w-[1150px] mx-auto pr-6 pl-5 flex items-center justify-between">
         <Link to={config.routes.home}>
           <img src={image.Logo} alt="TopTop" />
@@ -250,7 +281,10 @@ const Header = (props) => {
                 <PlusIcon />
                 Upload
               </button>
-              <button className=" hover:bg-[#ef2950] flex items-center justify-center min-w-[110px] min-h-[36px] h-9 px-4 ml-4 text-white bg-[#fe2c55] rounded  font-bold">
+              <button 
+              className=" hover:bg-[#ef2950] flex items-center justify-center min-w-[110px] min-h-[36px] h-9 px-4 ml-4 text-white bg-[#fe2c55] rounded  font-bold"
+              onClick={()=>setShowAuthModal(true)}
+              >
                 Log in
               </button>
             </>
